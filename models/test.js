@@ -18,8 +18,8 @@ const TestSchema = new Schema({
   image: {
     type: String,
   },
-  time: {
-    type: String, // Keeping it string as you mentioned earlier
+  duration: {
+    type: Number, // Keeping it string as you mentioned earlier
   },
   questions: [QuestionSchema], // 👈 Correctly define questions as an array of objects
 });

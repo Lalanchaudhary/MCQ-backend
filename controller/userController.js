@@ -95,6 +95,8 @@ const SignUpWithFaceBook = async (req, res) => {
 const setupUser = async (req, res) => {
   const { userId } = req.params;
   let { name, dob, gender } = req.body;
+  console.log("Received Data:", req.body);
+  
 
   // Optional: If moment is used to format DOB
   if (dob) {
@@ -115,7 +117,8 @@ const setupUser = async (req, res) => {
 
     // Check if a file was uploaded and save its path
     if (req.file) {
-      user.profileImage = req.file.path; // Save image path (e.g., 'uploads/16900000-profile.jpg')
+      console.log("File uploaded:", req.file);
+      user.image = req.file.path; // Save image path (e.g., 'uploads/16900000-profile.jpg')
     }
 
     // Save updated user
