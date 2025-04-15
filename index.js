@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const userRouter = require('./routes/userRoute');
 const testRouter = require('./routes/testRoute');
+const LeaderBoardRoute = require('./routes/LeaderBoardRoute');
 const body_parser = require("body-parser");
 const { Server } = require("socket.io");
 const db = require('./db/db');
@@ -32,7 +33,7 @@ app.use('/uploads', express.static('uploads'));
 // Routes
 app.use('/usersroute', userRouter);
 app.use('/testroute', testRouter);
-
+app.use('/LeaderBoardRoute', LeaderBoardRoute);
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
